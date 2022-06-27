@@ -21,7 +21,7 @@ Clone the repository. A local database environment needs to be running. `docker-
 docker-compose up
 ```
 
-It requires [Docker to be installed](#install-docker). It will initialize an empty `url-shortener` database and then execute `./gradlew bootRun` automatically and starts the application.
+It requires [Docker to be installed](#install-docker). 
 
 To run tests use command:
 
@@ -56,11 +56,7 @@ Resolve the short url and returns the mapped long url.
 
 Sample Request:
 ```
-curl --location --request GET 'localhost:8080/url/resolve?id=https://dkb/e3051497' \
---header 'Content-Type: application/json' \
---data-raw '
-    "http://www.facebook.com/"
-'
+curl --location --request GET 'localhost:8080/url/resolve?id=https://dkb/e3051497'
 ```
 
 Response:
