@@ -1,0 +1,20 @@
+version: "3"
+services:
+  urlshortener:
+    build: .
+    container_name: urlshortener
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgresdb:5432/url-shortener
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgresdb
+  postgresdb:
+    image: postgres:11-alpine
+    container_name: urlshortener-db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USERNAME=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=url-shortener

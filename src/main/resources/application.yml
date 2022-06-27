@@ -1,0 +1,17 @@
+server.port: 8080
+
+spring:
+  application.name: url-shortener
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/url-shortener"
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: password
+  jpa:
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    hibernate.ddl-auto: update
+  sql:
+    init:
+      platform: postgresql
+
